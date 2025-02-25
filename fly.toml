@@ -17,6 +17,11 @@ console_command = '/rails/bin/rails console'
   min_machines_running = 0
   processes = ['app']
 
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+
 [[vm]]
   memory = '1gb'
   cpu_kind = 'shared'
