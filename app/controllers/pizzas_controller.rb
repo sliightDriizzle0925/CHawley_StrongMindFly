@@ -1,5 +1,5 @@
 class PizzasController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   #before_action :authenticate_chef
   before_action :get_toppings
   before_action :set_pizza, only: %i[ show edit update destroy ]
