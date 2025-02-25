@@ -2,7 +2,9 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
 
-  config.hosts << "pizza-store-broken-water-3534.fly.dev/"
+  # config.hosts << "pizza-store-broken-water-3534.fly.dev/"
+
+  config.hosts.clear
 
   # Settings specified here will take precedence over those in config/application.rb.
 
