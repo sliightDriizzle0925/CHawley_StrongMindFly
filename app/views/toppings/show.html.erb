@@ -1,0 +1,5 @@
+<h1><%= @topping.name %></h1>
+
+<%= link_to "Back", toppings_path %>
+<%= link_to "Edit", edit_topping_path(@topping) %>
+<%= button_to "Delete", @topping, method: :delete, data: { turbo_confirm: "Are you sure?" } %>

@@ -1,0 +1,23 @@
+# fly.toml app configuration file generated for pizza-store-divine-firefly-9606 on 2025-02-24T13:51:15-07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'pizza-store-divine-firefly-9606'
+primary_region = 'lax'
+console_command = '/rails/bin/rails console'
+
+[build]
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

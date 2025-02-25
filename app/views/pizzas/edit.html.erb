@@ -1,0 +1,8 @@
+<h1>Edit Pizza</h1>
+
+<%= render "form", pizza: @pizza %>
+
+<div class="actions">
+    <%= link_to "Cancel", @pizza, class: "btn btn-secondary" %>
+    <%= link_to "Back to Pizzas", pizzas_path, class: "btn btn-back" %>
+</div>

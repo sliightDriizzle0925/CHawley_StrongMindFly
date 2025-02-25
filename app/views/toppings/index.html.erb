@@ -1,0 +1,17 @@
+<h1>Toppings</h1>
+
+<%= link_to "New Topping", new_topping_path, class: "btn" %>
+
+<div id="toppings">
+    <% @toppings.each do |topping| %>
+        <div class="topping-item">
+            <p><%= "#{topping.name}" %></p>
+            <div class="actions">
+                <%= link_to "Edit", edit_topping_path(topping), class: "btn btn-edit" %>
+                <%= form_with(url: topping_path(topping), method: :delete, local: true, class: "delete-form") do |form| %>
+                    <%= form.submit "Delete", class: "btn btn-delete", data: { confirm: "Are you sure you want to delete this topping?" } %>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+</div>

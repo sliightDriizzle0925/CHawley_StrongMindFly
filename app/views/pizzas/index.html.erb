@@ -1,0 +1,26 @@
+<h1>Pizzas</h1>
+
+<%= link_to "New Pizza", new_pizza_path, class: "btn" %>
+
+<div id="pizzas">
+    <% @pizzas.each do |pizza| %>
+        <div class="pizza-item">
+            <span class="pizza-name"><%= pizza.name %></span>
+            <div class="pizza-toppings">
+                <strong>Toppings:</strong> 
+                <% if pizza.toppings_list.present? %>
+                    <%= pizza.toppings_list.join(", ") %>
+                <% else %>
+                    <span>No toppings</span>
+                <% end %>
+            </div>
+            <div class="actions">
+                <%= link_to "Edit", edit_pizza_path(pizza), class: "btn btn-edit" %>
+
+                <%= form_with(url: pizza_path(pizza), method: :delete, local: true, class: "delete-form") do |form| %>
+                    <%= form.submit "Delete", class: "btn btn-delete", data: { confirm: "Are you sure you want to delete this pizza?" } %>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+</div>

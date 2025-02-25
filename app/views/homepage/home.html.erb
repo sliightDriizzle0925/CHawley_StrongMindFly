@@ -1,0 +1,9 @@
+<h1>Welcome to your pizza store!</h1>
+
+<% if current_user.owner? %>
+    <%= link_to "View Toppings", toppings_path %>
+<% end %>
+
+<% if current_user.chef? %>
+    <%= link_to "View Pizza", pizzas_path %>
+<% end %>

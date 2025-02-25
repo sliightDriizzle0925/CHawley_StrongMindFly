@@ -1,0 +1,5 @@
+<h1><%= @pizza.name %></h1>
+<p><strong>Toppings:</strong> <%= @pizza.toppings_list.join(', ') %></p>
+<%= link_to "Back", pizzas_path %>
+<%= link_to "Edit", edit_pizza_path(@pizza) %>
+<%= button_to "Delete", @pizza, method: :delete, data: { turbo_confirm: "Are you sure?" } %>

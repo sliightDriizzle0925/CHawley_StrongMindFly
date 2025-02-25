@@ -1,0 +1,10 @@
+<%= form_with model: @topping do |form| %>
+    <div class="form-group">
+        <%= form.label :name, "Topping Name" %>
+        <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="form-actions">
+        <%= form.submit "Create Topping", class: "btn btn-primary" %>
+    </div>
+<% end %>
