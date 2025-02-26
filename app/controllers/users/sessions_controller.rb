@@ -4,14 +4,14 @@ class Users::SessionsController < Devise::SessionsController
     super do |resource|
       if resource.chef?
         flash[:notice] = "Welcome Chef!"
-        return redirect_to root_path
-      elsif resource.owner?
+      else resource.owner?
         flash[:notice] = "Welcome Owner!"
-        return redirect_to root_path
-      else
-        return redirect_to root_path
       end
     end
+  end
+
+  def after_sign_in_path_for(resource)
+    root_path
   end
 
   # Called after sign out

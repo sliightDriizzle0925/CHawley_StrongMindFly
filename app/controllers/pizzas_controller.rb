@@ -1,6 +1,5 @@
 class PizzasController < ApplicationController
-  # before_action :authenticate_user!
-  #before_action :authenticate_chef
+  before_action :authenticate_user!
   before_action :get_toppings
   before_action :set_pizza, only: %i[ show edit update destroy ]
   def index
@@ -49,7 +48,4 @@ class PizzasController < ApplicationController
     def pizza_params
       params.require(:pizza).permit(:name, toppings_list: [])
     end
-    #def authorize_chef
-      #redirect_to root_path, alert: "Access Denied"
-    #end
 end
