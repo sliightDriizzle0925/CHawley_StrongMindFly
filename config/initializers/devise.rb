@@ -306,6 +306,8 @@ Devise.setup do |config|
   config.responder.redirect_status = :see_other
 
   config.timeout_in = 30.minutes
+  config.remember_for = 2.weeks
+  config.session_store :cookie_store, key: "_pizz_session", secure: Rails.env.production?, same_site: :none
 
   # ==> Configuration for :registerable
 
