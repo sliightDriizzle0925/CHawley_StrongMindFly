@@ -6,6 +6,10 @@ Rails.application.configure do
 
   config.hosts.clear
 
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.assets.compile = false # Set to false to prevent fallback to live compilation
+  config.assets.digest = true
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
