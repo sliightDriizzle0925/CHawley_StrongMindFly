@@ -34,3 +34,5 @@
 /config/master.key
 Desktop
 Desktop-cert.pub
+
+/config/credentials/production.key
